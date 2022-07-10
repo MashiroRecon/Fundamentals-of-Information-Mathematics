@@ -1,17 +1,25 @@
 #  Euclidean Algorithm
 
-a = int(input("The first number = "))
-b = int(input("The second number = "))
+x = [""]*100
+y = [""]*100
+q = [""]*100
+r = [""]*100
 
-q = a // b
-r = a % b
-print(a, " = ", q, "*", b, "+", r)
+i = 0
+
+x[i] = int(input("The first number = "))
+y[i] = int(input("The second number = "))
+
+q[i] = x[i] // y[i]
+r[i] = x[i] % y[i]
+print(x[i], " = ", q[i], "*", y[i], "+", r[i])
 
 while r != 0:
-    a = b
-    b = r
-    q = a // b
-    r = a % b
-    print(a, " = ", q, "*", b, "+", r)
+    x[i+1] = y[i]
+    y[i+1] = r[i]
+    q[i+1] = x[i+1] // y[i+1]
+    r[i+1] = x[i+1] % y[i+1]
+    print(x[i+1], " = ", q[i+1], "*", y[i+1], "+", r[i+1])
+    i = i + 1
 
-print("GCD = ", b)
+print("GCD = ", y[i])
