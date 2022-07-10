@@ -1,9 +1,9 @@
 #  Euclidean Algorithm
 
-x = [""]*100
-y = [""]*100
-q = [""]*100
-r = [""]*100
+x = [""]
+y = [""]
+q = [""]
+r = [""]
 
 i = 0
 
@@ -14,12 +14,18 @@ q[i] = x[i] // y[i]
 r[i] = x[i] % y[i]
 print(x[i], " = ", q[i], "*", y[i], "+", r[i])
 
-while r != 0:
-    x[i+1] = y[i]
-    y[i+1] = r[i]
-    q[i+1] = x[i+1] // y[i+1]
-    r[i+1] = x[i+1] % y[i+1]
+while r[i] != 0:
+    x.append(y[i])
+    y.append(r[i])
+    q.append(x[i+1] // y[i+1])
+    r.append(x[i+1] % y[i+1])
     print(x[i+1], " = ", q[i+1], "*", y[i+1], "+", r[i+1])
     i = i + 1
 
 print("GCD = ", y[i])
+
+#  Use math.lib
+
+import math
+gcd = math.gcd(x[0], y[0])
+print("math.gcd = ", gcd)
