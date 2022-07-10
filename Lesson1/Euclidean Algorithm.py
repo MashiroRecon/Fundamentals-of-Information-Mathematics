@@ -24,8 +24,15 @@ while r[i] != 0:
 
 print("GCD = ", y[i])
 
-#  Use math.lib
+#  Use math
 
+from gettext import npgettext
 import math
-gcd = math.gcd(x[0], y[0])
-print("math.gcd = ", gcd)
+math_gcd = math.gcd(x[0], y[0])
+print("math.gcd = ", math_gcd)
+
+#  Use NumPy
+
+import numpy as np
+numpy_gcd = np.gcd(x[0], y[0])
+print("numpy.gcd = ", numpy_gcd)
