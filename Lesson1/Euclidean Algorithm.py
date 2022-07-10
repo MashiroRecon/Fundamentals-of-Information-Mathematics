@@ -36,3 +36,9 @@ print("math.gcd = ", math_gcd)
 import numpy as np
 numpy_gcd = np.gcd(x[0], y[0])
 print("numpy.gcd = ", numpy_gcd)
+
+#  Use SymPy
+
+import sympy as sp
+sympy_gcd = sp.gcd(x[0], y[0])
+print("sympy.gcd = ", sympy_gcd)
