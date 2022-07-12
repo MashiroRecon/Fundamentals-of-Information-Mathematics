@@ -1,5 +1,10 @@
 #  Euclidean Algorithm
 
+#  imports
+import math
+import numpy as np
+import sympy as sp
+
 x = [""]
 y = [""]
 q = [""]
@@ -26,19 +31,15 @@ print("GCD = ", y[i])
 
 #  Use math
 
-from gettext import npgettext
-import math
 math_gcd = math.gcd(x[0], y[0])
 print("math.gcd = ", math_gcd)
 
 #  Use NumPy
 
-import numpy as np
 numpy_gcd = np.gcd(x[0], y[0])
 print("numpy.gcd = ", numpy_gcd)
 
 #  Use SymPy
 
-import sympy as sp
 sympy_gcd = sp.gcd(x[0], y[0])
 print("sympy.gcd = ", sympy_gcd)
