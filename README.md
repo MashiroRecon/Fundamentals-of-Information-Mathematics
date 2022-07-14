@@ -8,4 +8,4 @@ Program management and sharing repository for information mathematics.
 - [Inverse Matrix Calculation](./Inverse%20Matrix%20Calculation.py)
 - [Simultaneous Equations](./Simultaneous%20Equations.py)
 - [Matrix-based Cryptography](./Matrix-based%20Cryptography.py)
-- [Matrix-based Cryptography]
+- [Matrix-based Cryptography(Limited)](./Matrix-based%20Cryptography(Limited).py)
