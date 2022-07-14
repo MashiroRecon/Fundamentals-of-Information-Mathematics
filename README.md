@@ -7,4 +7,3 @@
 - [First-order Congruence Equation](./First-order%20Congruence%20Equation.py)
 - [Inverse Matrix Calculation](./Inverse%20Matrix%20Calculation.py)
 - [Simultaneous Equations](./Simultaneous%20Equations.py)
-ns.py
