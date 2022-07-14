@@ -1,7 +1,7 @@
 # Fundamentals-of-Information-Mathematics
-## Program management and sharing repository for information mathematics
+Program management and sharing repository for information mathematics.
 
-### Programs
+## Programs
 - [Euclidean Algorithm](./Euclidean%20Algorithm.py)
 - [Diophantine equation](./Diophantine%20Equation.py)
 - [First-order Congruence Equation](./First-order%20Congruence%20Equation.py)
