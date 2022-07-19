@@ -9,8 +9,9 @@ import random
 #  暗号化したいテキストの入力
 text = list(input("Enter the text :"))
 
-#  mod:nの入力
-N = int(input("mod ="))
+#  mod:nの入力(1114112で固定：Python,chrドキュメント参照)
+# N = int(input("mod ="))
+N = 1114111
 
 #  暗号化したい文字列を内包することのできる最低の正方行列の大きさを求める
 q = 1
@@ -67,19 +68,18 @@ print(cipher)
 
 #  A逆行列の算出
 A_inv = np.linalg.inv(A) % N
+print(A_inv)
 
-A_inv = np.ravel(A_inv)
-A_inv = [int(a) for a in A_inv]
-A_inv = np.array([int(a) for a in A_inv]).reshape(q, q)
-
-decod = np.dot(A_inv, C)
+decod = np.dot(A_inv, C) % N
 print(decod)
-# print(np.dot(A, A_inv) % N)
-# print(np.dot(A_inv, A) % N)
+print(np.dot(A, A_inv) % N)
+print(np.dot(A_inv, A) % N)
 
 decod = np.ravel(decod)
+decod = decod % N
 decod = [int(a) for a in decod]
 print(decod)
+print(text)
 
 j = 0
 while j != int(len(decod)):
