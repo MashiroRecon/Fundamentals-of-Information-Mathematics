@@ -2,7 +2,6 @@
 
 #  Imports
 import numpy as np
-import sympy as sp
 import random
 
 #  暗号化したいテキストの入力
@@ -39,7 +38,7 @@ while j != int(len(password)):
     password[j] = int(ord(password[j]))
     j += 1
 
-#  暗号化鍵をAへ2行の配列として代入
+#  暗号化鍵をAへlen(text)行の配列として代入
 A = np.array([int(a) for a in password]).reshape(int(len(text) / 2),
                                                  int(len(password) /
                                                  int(len(text) / 2)))
@@ -53,13 +52,9 @@ N = int(input("mod ="))
 C = np.dot(A, P) % N
 print(C)
 
-#  ASCIIへ変換
-j = 0
-cipher = np.array(C).reshape(1, len(text))
-print(cipher)
-while j != int(len(text)):
-    cipher[j] = chr(cipher[j])
-    j += 1
+#  1行に変換
+j = 1
+cipher = np.ravel(C)
 print(cipher)
 
 #  暗号化鍵作成時にランダム関数を用いて必要な行数を確保できる文字列を生成
