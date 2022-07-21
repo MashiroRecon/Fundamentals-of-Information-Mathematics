@@ -87,3 +87,9 @@ while j != int(len(decod)):
     decod[j] = chr(int(decod[j]))
     j += 1
 print(decod)
+
+j = 0
+while j != int(len(cipher)):
+    print(chr(int(cipher[j])))
+    j += 1
+print(cipher)

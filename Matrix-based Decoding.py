@@ -2,32 +2,57 @@
 
 #  Imports
 import numpy as np
-import sympy as sp
-import random
 
-#  復号化したいテキストの入力
-text = list(input("Enter the text :"))
+#  decoding process
+q = int(input("Enter the number of ciphertext characters :"))
 
-#  暗号化鍵の入力
-password = list(input("Enter the encryption key :"))
+j = 1
+cipher = list(str(input("Enter the first character of ciphertext :")))
+while j != q:
+    cipher.append(str(input("Enter the " +
+                  str(j)+"th character of ciphertext :")))
+    j += 1
 
-#  mod:nの入力
-N = int(input("mod ="))
-
-#  文字を全てASCIIで変換しintにして代入
 j = 0
-print(password)
+while j != int(len(cipher)):
+    cipher[j] = int(ord(cipher[j]))
+    j += 1
+
+
+print(cipher)
+print([int(a) for a in cipher])
+
+C = np.array([int(a) for a in cipher]).reshape(int(q ** 0.5), int(q ** 0.5))
+
+N = 1114111
+
+password = list(input("Enter the password :"))
+
+j = 0
 while j != int(len(password)):
     password[j] = int(ord(password[j]))
     j += 1
 
-#  暗号化鍵をAへlen(text)行の配列として代入
-A = np.array([int(a) for a in password]).reshape(int(len(text) / 2),
-                                                 int(len(password) /
-                                                 int(len(text) / 2)))
-print(password)
-print(A)
+A = np.array([int(a) for a in password]).reshape(int(q ** 0.5), int(q ** 0.5))
 
-#  Aの逆行列を算出
-A_inv = np.linalg.inv(A)
-print(A_inv)
+#  A Inverse matrix calculation
+A_inv = np.linalg.inv(A) % N
+# print(A_inv)
+
+decod = np.dot(A_inv, C) % N
+
+# print(decod)
+# print(np.dot(A, A_inv) % N)
+# print(np.dot(A_inv, A) % N)
+
+decod = np.ravel(decod)
+decod = decod % N
+decod = [int(a) for a in decod]
+# print(decod)
+# print(text)
+
+j = 0
+while j != int(len(decod)):
+    decod[j] = chr(int(decod[j]))
+    j += 1
+print(decod)
