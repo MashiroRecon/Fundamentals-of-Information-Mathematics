@@ -8,7 +8,7 @@ import random
 text = list(input("Enter the text :"))
 
 #  Input for mod:n (fixed at 1114112: see Python,chr documentation)
-N = 1114111
+N = 1114112
 
 #  Find the size of the smallest square matrix
 #   that can encapsulate the string to be encrypted

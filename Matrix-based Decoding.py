@@ -24,7 +24,7 @@ print([int(a) for a in cipher])
 
 C = np.array([int(a) for a in cipher]).reshape(int(q ** 0.5), int(q ** 0.5))
 
-N = 1114111
+N = 1114112
 
 password = list(input("Enter the password :"))
 
