@@ -10,7 +10,7 @@ j = 1
 cipher = list(str(input("Enter the first character of ciphertext :")))
 while j != q:
     cipher.append(str(input("Enter the " +
-                  str(j)+"th character of ciphertext :")))
+                  str(j+1)+"th character of ciphertext :")))
     j += 1
 
 j = 0
